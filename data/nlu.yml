@@ -1,6 +1,45 @@
 version: "3.1"
 
 nlu:
+- intent: product
+  examples: |
+    - Tôi cần mua [laptop](type_product)
+    - Tôi muốn đặt hàng cho [tivi](type_product)
+    - Đặt hàng cho [iphone](type_product)
+    - Cần Mua [máy tính](type_product)
+    - Tìm [chuột](type_product)
+- regex: type_product
+  examples: |
+    - [a-zA-Z0-9\s]{1,20}
+    - laptop
+    - tivi
+    - iphone
+    - máy giặt
+    - điều hòa
+    - tai nghe
+    - iphone 13
+    - chuột không dây
+    - Wireless Mouse
+    - BCS 
+    - iphone13
+
+- synonym: laptop
+  examples: |
+    - máy tính xách tay
+    - notebook
+    - Macbook ari m1 
+    - Dell inspection
+    - Dell Alien
+
+- intent: order
+  examples: |
+    - kiểm tra tôi có [order](type_order) nào không ?
+    - tôi có [đơn hàng](type_order) nào không ?
+    - tôi có đơn hàng [Buy BCS](type_order) 
+    - tôi đặt đơn hàng tên [iphone13](type_order)
+
+
+
 - intent: greet
   examples: |
     - hey

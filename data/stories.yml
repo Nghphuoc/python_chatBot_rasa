@@ -2,14 +2,27 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: Kiểm tra đơn hàng không tìm thấy
+  steps:
+  - intent: order
+  - slot_was_set:
+      - type_order: null  # Không có mã đơn hàng
+  - action: utter_order_not_found
+  - action: utter_ask_order
+
+- story: Chào hỏi và phản hồi tích cực
   steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
 
-- story: sad path 1
+- story: Product search
+  steps:
+  - intent: product
+  - action: action_product
+
+- story: Chào hỏi và động viên người dùng
   steps:
   - intent: greet
   - action: utter_greet
@@ -19,7 +32,7 @@ stories:
   - intent: affirm
   - action: utter_happy
 
-- story: sad path 2
+- story: Chào hỏi và tạm biệt khi không giúp được
   steps:
   - intent: greet
   - action: utter_greet
@@ -28,3 +41,49 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: Tìm kiếm sản phẩm cụ thể
+  steps:
+  - intent: product
+  - slot_was_set:
+      - type_product: "iphone13"  # Ví dụ minh họa
+  - action: action_product
+
+- story: Tìm kiếm sản phẩm theo danh mục
+  steps:
+  - intent: search_product
+  - slot_was_set:
+      - type_product: "Laptop"
+  - action: action_product
+
+- story: Kiểm tra đơn hàng
+  steps:
+  - intent: order
+  - slot_was_set:
+      - type_order: "6"  # Ví dụ minh họa
+  - action: action_order
+
+- story: Chào hỏi và tìm kiếm sản phẩm
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: product
+  - slot_was_set:
+      - type_product: "Wireless Mouse"  # Ví dụ minh họa
+  - action: action_product
+
+- story: Chào hỏi và kiểm tra đơn hàng
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: order
+  - slot_was_set:
+      - type_order: "5"  # Ví dụ minh họa
+  - action: action_order
+
+- story: Tìm kiếm sản phẩm
+  steps:
+  - intent: product
+  - slot_was_set:
+      - type_product: "iphone13"
+  - action: action_product

@@ -1,0 +1,46 @@
+[
+  {
+    "name": "type_product",
+    "pattern": "BCS"
+  },
+  {
+    "name": "type_product",
+    "pattern": "Wireless Mouse"
+  },
+  {
+    "name": "type_product",
+    "pattern": "chuột không dây"
+  },
+  {
+    "name": "type_product",
+    "pattern": "iphone"
+  },
+  {
+    "name": "type_product",
+    "pattern": "iphone 13"
+  },
+  {
+    "name": "type_product",
+    "pattern": "iphone13"
+  },
+  {
+    "name": "type_product",
+    "pattern": "laptop"
+  },
+  {
+    "name": "type_product",
+    "pattern": "máy giặt"
+  },
+  {
+    "name": "type_product",
+    "pattern": "tai nghe"
+  },
+  {
+    "name": "type_product",
+    "pattern": "tivi"
+  },
+  {
+    "name": "type_product",
+    "pattern": "điều hòa"
+  }
+]

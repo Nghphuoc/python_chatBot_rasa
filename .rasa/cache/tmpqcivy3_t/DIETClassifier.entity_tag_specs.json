@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-type_order",
+      "2": "I-type_order",
+      "3": "L-type_order",
+      "4": "U-type_order",
+      "5": "B-type_product",
+      "6": "I-type_product",
+      "7": "L-type_product",
+      "8": "U-type_product",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-type_order": 1,
+      "I-type_order": 2,
+      "L-type_order": 3,
+      "U-type_order": 4,
+      "B-type_product": 5,
+      "I-type_product": 6,
+      "L-type_product": 7,
+      "U-type_product": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

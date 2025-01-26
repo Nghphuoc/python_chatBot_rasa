@@ -2,6 +2,11 @@ version: "3.1"
 
 rules:
 
+- rule: Tìm kiếm sản phẩm
+  steps:
+    - intent: product
+    - action: action_product
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -11,3 +16,4 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+

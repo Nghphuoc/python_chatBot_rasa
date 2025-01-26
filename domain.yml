@@ -1,6 +1,8 @@
 version: "3.1"
 
 intents:
+  - product
+  - order
   - greet
   - goodbye
   - affirm
@@ -8,27 +10,115 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - search_product
+
+entities:
+  - type_product
+  - type_order
+
+entity_synonyms:
+  "iphone13": "iPhone 13"
+  "iphone 13": "iPhone 13"
+  "ip13": "iphone 13"
+  "macbook pro": "MacBook Pro"
+  "macbook": "MacBook Pro"
+  "samsung galaxy": "Samsung Galaxy"
+  "samsung": "Samsung Galaxy"
+  "galaxy s21": "Samsung Galaxy"
+  "laptop gaming": "Laptop"
+  "chuột không dây": "Chuột"
+
+forms:
+  product_form:
+    required_slots:
+      - type_product  # Đảm bảo đây là một danh sách
+
+slots:
+  type_product:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: type_product
+
+  type_order:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: type_order
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+    - text: "Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?"
+    - text: "Xin chào! Bạn đang tìm kiếm sản phẩm hay cần kiểm tra đơn hàng?"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Cảm ơn bạn đã ghé thăm. Hẹn gặp lại!"
+    - text: "Chúc bạn một ngày tốt lành. Tạm biệt nhé!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "Tôi là trợ lý ảo của bạn, được xây dựng bởi Rasa."
+
+  utter_cheer_up:
+    - text: "Đừng lo lắng, mọi thứ sẽ ổn thôi!"
+    - text: "Hãy giữ vững tinh thần! Đây là chút động viên dành cho bạn:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Điều đó có giúp ích cho bạn không?"
+    - text: "Bạn thấy thông tin này có hữu ích không?"
+
+  utter_happy:
+    - text: "Tuyệt vời, chúc bạn một ngày vui vẻ!"
+    - text: "Rất vui khi biết điều đó. Bạn cần hỗ trợ gì thêm không?"
+
+  utter_ask_product:
+    - text: "Bạn đang tìm kiếm sản phẩm nào? Vui lòng cung cấp tên hoặc danh mục sản phẩm."
+    - text: "Bạn có thể cho tôi biết thêm thông tin về sản phẩm bạn cần không?"
+
+  utter_product_info:
+    - text: "Sản phẩm {type_product} hiện đang có giá {price}. Bạn có muốn đặt hàng không?"
+    - text: "Sản phẩm {type_product} có sẵn trong kho. Bạn có muốn biết thêm chi tiết không?"
+
+  utter_ask_order:
+    - text: "Vui lòng cung cấp mã đơn hàng để tôi kiểm tra cho bạn nhé."
+    - text: "Hãy cho tôi biết mã đơn hàng để kiểm tra thông tin."
+
+  utter_order_status:
+    - text: "Đơn hàng {type_order} hiện đang được giao và dự kiến sẽ tới vào ngày {delivery_date}."
+    - text: "Đơn hàng {type_order} đã được giao thành công. Cảm ơn bạn đã mua hàng!"
+
+  utter_order_not_found:
+    - text: "Tôi không tìm thấy đơn hàng nào với mã {type_order}. Bạn có thể kiểm tra lại giúp tôi không?"
+    - text: "Mã đơn hàng {type_order} không hợp lệ. Vui lòng thử lại."
+
+  utter_thankyou:
+    - text: "Cảm ơn bạn đã tin tưởng dịch vụ của chúng tôi!"
+    - text: "Rất vui được hỗ trợ bạn. Chúc bạn mua sắm vui vẻ!"
+
+  utter_contact_support:
+    - text: "Nếu cần hỗ trợ thêm, bạn có thể liên hệ qua hotline: 1900 1234."
+    - text: "Đội ngũ hỗ trợ của chúng tôi luôn sẵn sàng giúp bạn qua email: support@domain.com."
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+actions:
+  - action_product
+  - action_order
+  - search_product
+  - utter_greet
+  - utter_goodbye
+  - utter_iamabot
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_ask_product
+  - utter_product_info
+  - utter_ask_order
+  - utter_order_status
+  - utter_order_not_found
+  - utter_thankyou
+  - utter_contact_support
