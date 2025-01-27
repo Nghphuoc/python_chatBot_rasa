@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: product
   examples: |
@@ -22,23 +21,30 @@ nlu:
     - Wireless Mouse
     - BCS 
     - iphone13
-
 - synonym: laptop
   examples: |
     - máy tính xách tay
     - notebook
-    - Macbook ari m1 
+    - Macbook Air M1 
     - Dell inspection
     - Dell Alien
 
 - intent: order
   examples: |
-    - kiểm tra tôi có [order](type_order) nào không ?
-    - tôi có [đơn hàng](type_order) nào không ?
-    - tôi có đơn hàng [Buy BCS](type_order) 
-    - tôi đặt đơn hàng tên [iphone13](type_order)
-
-
+    - Tôi muốn kiểm tra đơn hàng [Jayki](type_order)
+    - Tôi muốn kiểm tra đơn hàng [ABC123](type_order)
+    - Tôi muốn kiểm tra đơn hàng [XYZ789](type_order)
+    - Tôi muốn kiểm tra đơn hàng [123ABC](type_order)
+    - Tôi muốn kiểm tra đơn hàng [456DEF](type_order)
+    - Tôi muốn kiểm tra đơn hàng [mã bất kỳ](type_order)
+    - Tôi muốn kiểm tra đơn hàng [#123ABC](type_order)
+    - Kiểm tra đơn hàng [ABC123](type_order)
+    - Xem thông tin đơn hàng [XYZ789](type_order)
+- regex: type_order
+  examples: |
+    - JaykiNguyen
+    - [A-Za-z0-9]
+    - [a-zA-Z0-9\s]{1,20}
 
 - intent: greet
   examples: |

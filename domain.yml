@@ -41,6 +41,7 @@ slots:
       - type: from_entity
         entity: type_product
 
+
   type_order:
     type: text
     influence_conversation: true
@@ -109,16 +110,3 @@ actions:
   - action_product
   - action_order
   - search_product
-  - utter_greet
-  - utter_goodbye
-  - utter_iamabot
-  - utter_cheer_up
-  - utter_did_that_help
-  - utter_happy
-  - utter_ask_product
-  - utter_product_info
-  - utter_ask_order
-  - utter_order_status
-  - utter_order_not_found
-  - utter_thankyou
-  - utter_contact_support

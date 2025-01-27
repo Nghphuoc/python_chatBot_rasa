@@ -1,26 +1,66 @@
+version: "3.1"
+
 recipe: default.v1
 
-assistant_id: 20250123-213614-upbeat-centroid
-
 language: vi
+
 pipeline:
-  - name: WhitespaceTokenizer
-  - name: RegexFeaturizer
-  - name: RegexEntityExtractor
-  - name: DIETClassifier
-    constrain_similarities: true
-    epochs: 100
-  - name: FallbackClassifier
-    threshold: 0.4
+- name: WhitespaceTokenizer
+- name: LexicalSyntacticFeaturizer
+- name: RegexFeaturizer  # Thêm RegexFeaturizer để xử lý regex
+- name: DIETClassifier
+  constrain_similarities: true
+  epochs: 100
+  batch_size: 32  # Tùy chỉnh kích thước batch
+  learning_rate: 0.001  # Thử thêm learning rate
+- name: ResponseSelector
+  epochs: 100
+- name: EntitySynonymMapper
+- name: FallbackClassifier
+  threshold: 0.3  # Thử giảm threshold để cải thiện khả năng phản hồi
+- name: RegexEntityExtractor  # Vẫn giữ RegexEntityExtractor để trích xuất thực thể từ regex
 
 policies:
-  - name: MemoizationPolicy
-  - name: RulePolicy
-  - name: UnexpecTEDIntentPolicy
-    max_history: 5
-    epochs: 100
-  - name: TEDPolicy
-    max_history: 5
-    epochs: 100
-    constrain_similarities: true
+- name: MemoizationPolicy
+- name: RulePolicy
+- name: UnexpecTEDIntentPolicy
+  max_history: 5
+  epochs: 100
+- name: TEDPolicy
+  max_history: 5
+  epochs: 100
+  constrain_similarities: true
+assistant_id: 20250127-214932-frigid-amplitude
 
+
+#version: "3.1"
+#
+#recipe: default.v1
+#
+#language: vi
+#
+#pipeline:
+#- name: WhitespaceTokenizer
+#- name: LexicalSyntacticFeaturizer
+#- name: RegexFeaturizer  # Giữ lại RegexFeaturizer để xử lý regex
+#- name: DIETClassifier
+#  constrain_similarities: true
+#  epochs: 100
+#  batch_size: 32  # Tùy chỉnh kích thước batch
+#  learning_rate: 0.001  # Thử thêm learning rate
+#- name: ResponseSelector
+#  epochs: 100
+#- name: EntitySynonymMapper
+#- name: FallbackClassifier
+#  threshold: 0.3  # Thử giảm threshold để cải thiện khả năng phản hồi
+#
+#policies:
+#- name: MemoizationPolicy
+#- name: RulePolicy
+#- name: UnexpecTEDIntentPolicy
+#  max_history: 5
+#  epochs: 100
+#- name: TEDPolicy
+#  max_history: 5
+#  epochs: 100
+#  constrain_similarities: true
