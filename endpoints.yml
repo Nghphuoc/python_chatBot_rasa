@@ -43,3 +43,7 @@
 
 action_endpoint:
   url: "http://localhost:5055/webhook"
+cors:
+  enabled: true
+  allow_origins:
+    - "*"

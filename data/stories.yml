@@ -87,3 +87,59 @@ stories:
   - slot_was_set:
       - type_product: "iphone13"
   - action: action_product
+
+- story: Trả lời câu hỏi về chính sách bảo hành
+  steps:
+  - intent: ask_anything
+  - action: action_ask_anything
+
+- story: Người dùng chào hỏi
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: Người dùng tạm biệt
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: Người dùng hỏi chatbot là ai
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- story: Người dùng vui vẻ
+  steps:
+      - intent: mood_great
+      - action: utter_happy
+
+- story: Người dùng buồn
+  steps:
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+
+- story: Người dùng muốn hỏi về chính sách bảo hành
+  steps:
+      - intent: faq
+      - action: action_ask_anything
+
+- story: Người dùng muốn hỏi về địa chỉ cửa hàng
+  steps:
+      - intent: faq
+      - action: action_ask_anything
+
+- story: Người dùng cảm ơn
+  steps:
+      - intent: affirm
+      - action: utter_thankyou
+
+- story: Người dùng cần hỗ trợ thêm
+  steps:
+      - intent: deny
+      - action: utter_contact_support
+
+- story: Người dùng hỏi bất kỳ câu hỏi nào khác
+  steps:
+      - intent: ask_anything
+      - action: action_ask_anything

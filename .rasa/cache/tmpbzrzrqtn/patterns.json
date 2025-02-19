@@ -1,0 +1,122 @@
+[
+  {
+    "name": "type_order",
+    "pattern": "#ORD[0-9]+              # Nhận diện các mã bắt đầu bằng ORD+ số"
+  },
+  {
+    "name": "type_order",
+    "pattern": "#\\d{3,5}[A-Za-z]{2,4}   # Nhận diện mã dạng #123ABC, #456DEF"
+  },
+  {
+    "name": "type_order",
+    "pattern": "[A-Z0-9]+[-_][A-Z0-9]+  # Nhận diện ORD-123, XYZ_987"
+  },
+  {
+    "name": "type_order",
+    "pattern": "[A-Za-z0-9#\\-_]{3,30}   # Nhận diện mã đơn hàng gồm chữ, số, ký tự #, -, _"
+  },
+  {
+    "name": "type_order",
+    "pattern": "[A-Za-z0-9\\s#\\-_]{3,30} # Cho phép khoảng trắng"
+  },
+  {
+    "name": "type_product",
+    "pattern": "Apple Watch Series 9"
+  },
+  {
+    "name": "type_product",
+    "pattern": "Dell XPS"
+  },
+  {
+    "name": "type_product",
+    "pattern": "Lenovo ThinkPad"
+  },
+  {
+    "name": "type_product",
+    "pattern": "Logitech MX Master 3"
+  },
+  {
+    "name": "type_product",
+    "pattern": "Macbook Air"
+  },
+  {
+    "name": "type_product",
+    "pattern": "Macbook Pro"
+  },
+  {
+    "name": "type_product",
+    "pattern": "PlayStation 5"
+  },
+  {
+    "name": "type_product",
+    "pattern": "RTX 4090"
+  },
+  {
+    "name": "type_product",
+    "pattern": "Razer Blade 15"
+  },
+  {
+    "name": "type_product",
+    "pattern": "SSD 1TB"
+  },
+  {
+    "name": "type_product",
+    "pattern": "Samsung Galaxy S23"
+  },
+  {
+    "name": "type_product",
+    "pattern": "USB 128GB"
+  },
+  {
+    "name": "type_product",
+    "pattern": "Wireless Mouse"
+  },
+  {
+    "name": "type_product",
+    "pattern": "Xbox Series X"
+  },
+  {
+    "name": "type_product",
+    "pattern": "[a-zA-Z0-9\\s]{1,50}"
+  },
+  {
+    "name": "type_product",
+    "pattern": "chuột không dây"
+  },
+  {
+    "name": "type_product",
+    "pattern": "iPad Pro"
+  },
+  {
+    "name": "type_product",
+    "pattern": "iphone"
+  },
+  {
+    "name": "type_product",
+    "pattern": "iphone 13"
+  },
+  {
+    "name": "type_product",
+    "pattern": "laptop"
+  },
+  {
+    "name": "type_product",
+    "pattern": "máy giặt"
+  },
+  {
+    "name": "type_product",
+    "pattern": "router WiFi 6"
+  },
+  {
+    "name": "type_product",
+    "pattern": "tai nghe"
+  },
+  {
+    "name": "type_product",
+    "pattern": "tivi"
+  },
+  {
+    "name": "type_product",
+    "pattern": "điều hòa"
+  }
+]

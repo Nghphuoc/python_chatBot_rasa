@@ -6,6 +6,7 @@ rules:
     - intent: product
     - action: action_product
 
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -16,3 +17,7 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
+- rule: Trả lời câu hỏi ngoài yêu cầu
+  steps:
+  - intent: ask_anything
+  - action: action_ask_anything

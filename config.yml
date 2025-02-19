@@ -3,22 +3,23 @@ version: "3.1"
 recipe: default.v1
 
 language: vi
-
 pipeline:
-- name: WhitespaceTokenizer
-- name: LexicalSyntacticFeaturizer
-- name: RegexFeaturizer  # Thêm RegexFeaturizer để xử lý regex
-- name: DIETClassifier
-  constrain_similarities: true
-  epochs: 100
-  batch_size: 32  # Tùy chỉnh kích thước batch
-  learning_rate: 0.001  # Thử thêm learning rate
-- name: ResponseSelector
-  epochs: 100
-- name: EntitySynonymMapper
-- name: FallbackClassifier
-  threshold: 0.3  # Thử giảm threshold để cải thiện khả năng phản hồi
-- name: RegexEntityExtractor  # Vẫn giữ RegexEntityExtractor để trích xuất thực thể từ regex
+  - name: "WhitespaceTokenizer"  # Tokenize văn bản dựa trên khoảng trắng
+  - name: "LexicalSyntacticFeaturizer"  # Tạo các đặc trưng ngữ pháp từ văn bản
+  - name: "RegexFeaturizer"  # ✅ Thêm RegexFeaturizer để xử lý regex trong văn bản
+  - name: "CountVectorsFeaturizer"
+    lowercase: True  # ✅ Không phân biệt chữ hoa/thường
+  - name: "DIETClassifier"
+    constrain_similarities: true  # Cấu hình để cải thiện khả năng phân loại
+    epochs: 100  # Tăng số lượng epochs để cải thiện độ chính xác
+    batch_size: 32  # Kích thước batch tùy chỉnh
+    learning_rate: 0.001  # Thử thêm learning rate để cải thiện tốc độ học
+  - name: "ResponseSelector"  # Để chọn phản hồi dựa trên intent
+    epochs: 100  # Cải thiện độ chính xác của phản hồi
+  - name: "EntitySynonymMapper"  # Ánh xạ các thực thể đồng nghĩa
+  - name: "FallbackClassifier"  # Phân loại các câu không có intent rõ ràng
+    threshold: 0.3  # Cấu hình ngưỡng để khi confidence thấp sẽ chuyển sang fallback
+  - name: "RegexEntityExtractor"  # Vẫn giữ RegexEntityExtractor để trích xuất thực thể từ regex
 
 policies:
 - name: MemoizationPolicy

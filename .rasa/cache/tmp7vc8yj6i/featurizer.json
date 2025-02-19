@@ -1,0 +1,73 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "ask_anything": 1,
+        "back": 2,
+        "bot_challenge": 3,
+        "deny": 4,
+        "faq": 5,
+        "goodbye": 6,
+        "greet": 7,
+        "mood_great": 8,
+        "mood_unhappy": 9,
+        "nlu_fallback": 10,
+        "order": 11,
+        "out_of_scope": 12,
+        "product": 13,
+        "restart": 14,
+        "search_product": 15,
+        "session_start": 16
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_product": 13,
+        "action_order": 14,
+        "action_ask_anything": 15,
+        "utter_ask_order": 16,
+        "utter_ask_product": 17,
+        "utter_cheer_up": 18,
+        "utter_contact_support": 19,
+        "utter_did_that_help": 20,
+        "utter_goodbye": 21,
+        "utter_greet": 22,
+        "utter_happy": 23,
+        "utter_iamabot": 24,
+        "utter_order_not_found": 25,
+        "utter_order_status": 26,
+        "utter_product_info": 27,
+        "utter_thankyou": 28,
+        "product_form": 29
+      },
+      "entities": {
+        "type_order": 0,
+        "type_product": 1
+      },
+      "slots": {
+        "type_product_0": 0,
+        "type_order_0": 1
+      },
+      "active_loop": {
+        "product_form": 0
+      }
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

@@ -2,55 +2,208 @@ version: "3.1"
 nlu:
 - intent: product
   examples: |
-    - Tôi cần mua [laptop](type_product)
-    - Tôi muốn đặt hàng cho [tivi](type_product)
-    - Đặt hàng cho [iphone](type_product)
-    - Cần Mua [máy tính](type_product)
-    - Tìm [chuột](type_product)
+    - tôi cần mua [laptop](type_product)
+    - tôi muốn đặt hàng cho [tivi](type_product)
+    - đặt hàng cho [iphone](type_product)
+    - cần Mua [máy tính](type_product)
+    - tìm [chuột](type_product)
+    - tôi muốn mua [bàn phím cơ](type_product)
+    - có bán [smartwatch](type_product) không?
+    - shop có bán [smartwatch](type_product) không?
+    - tôi cần một [loa bluetooth](type_product)
+    - tôi có thể mua [camera an ninh](type_product) ở đây không?
+    - đặt trước [PS5](type_product)
+    - tôi muốn đặt một [tablet](type_product)
+    - tôi có thể mua [bộ phát WiFi](type_product) không?
+    - có [pin sạc dự phòng](type_product) không?
+    - tôi đang tìm [ổ cứng di động](type_product)
+    - bán [tai nghe không dây](type_product) không?
+    - tôi cần một [màn hình máy tính](type_product)
+    - tôi muốn mua [laptop gaming](type_product)
+    - tôi cần một [máy in](type_product)
+    - tôi cần mua [laptop](type_product)
+    - tôi muốn đặt hàng cho [tivi](type_product)
+    - đặt hàng cho [iphone](type_product)
+    - cần mua [máy tính](type_product)
+    - tìm [chuột](type_product)
+    - tôi muốn mua [bàn phím cơ](type_product)
+    - có bán [smartwatch](type_product) không?
+    - tôi cần một [loa bluetooth](type_product)
+    - tôi có thể mua [camera an ninh](type_product) ở đây không?
+    - đặt trước [PS5](type_product)
+    - tôi muốn đặt một [tablet](type_product)
+    - tôi có thể mua [bộ phát WiFi](type_product) không?
+    - có [pin sạc dự phòng](type_product) không?
+    - tôi đang tìm [ổ cứng di động](type_product)
+    - bán [tai nghe không dây](type_product) không?
+    - tôi cần một [màn hình máy tính](type_product)
+    - tôi muốn mua [laptop gaming](type_product)
+    - tôi cần một [máy in](type_product)
+    - có bán [ổ cứng SSD](type_product) không?
+    - tôi muốn mua [tản nhiệt nước](type_product)
+    - tôi đang tìm [card đồ họa RTX 3060](type_product)
+    - shop có [bàn phím cơ Razer](type_product) không?
+    - có bán [laptop Dell XPS](type_product) không?
+    - tôi cần mua một [MacBook Pro M2](type_product)
+    - tôi đang tìm [c](type_product)
+    - cửa hàng có [Sony PlayStation 5](type_product) không?
+    - tôi muốn đặt trước [Xbox Series X](type_product)
+    - tôi cần một [AirPods Pro 2](type_product)
+    - có [Samsung Galaxy Watch 6](type_product) không?
+    - tôi đang tìm mua [robot hút bụi](type_product)
+    - tôi muốn mua [máy chiếu mini](type_product)
+    - shop có [đồng hồ Garmin](type_product) không?
+    - có bán [màn hình cong 4K](type_product) không?
+    - tôi đang tìm [balo laptop chống sốc](type_product)
+    - shop có bán [chuột Logitech G502](type_product) không?
+    - tôi muốn mua [micro thu âm](type_product)
+    - có bán [gaming chair](type_product) không?
+    - tôi muốn tìm [đèn LED thông minh](type_product)
+    - shop có bán [Google Nest Hub](type_product) không?
+    - tôi muốn đặt [Amazon Echo](type_product)
+    - có [SSD NVMe 2TB](type_product) không?
+    - tôi cần mua một [máy rửa bát thông minh](type_product)
+    - tôi đang tìm [ổ cắm điện thông minh](type_product)
+    - tôi có thể mua [tai nghe Sony WH-1000XM5](type_product) không?
+    - shop có [bút cảm ứng Apple Pencil](type_product) không?
+    - tôi muốn mua một [bộ nhớ RAM DDR5](type_product)
+    - có bán [bàn phím cơ Keychron K8](type_product) không?
+    - tôi muốn tìm [màn hình gaming 240Hz](type_product)
+    - shop có [máy chơi game Nintendo Switch](type_product) không?
+    - tôi đang tìm mua [loại kính thực tế ảo Oculus Quest](type_product)
+    - tôi muốn mua [bộ sạc nhanh 100W](type_product)
+    - có [máy lọc không khí Xiaomi](type_product) không?
+    - muốn tìm [đèn bàn LED cảm ứng](type_product)
+    - tôi đang tìm một [máy ảnh Canon EOS R6](type_product)
+    - shop có bán [balo chống nước cho laptop](type_product) không?
+    - tôi cần mua một [bộ phát sóng 5G WiFi](type_product)
+    - có [ổ cứng HDD 10TB](type_product) không?
+    - tôi muốn đặt hàng một [iMac M3](type_product)
+
 - regex: type_product
   examples: |
-    - [a-zA-Z0-9\s]{1,20}
-    - laptop
-    - tivi
-    - iphone
-    - máy giặt
-    - điều hòa
-    - tai nghe
-    - iphone 13
-    - chuột không dây
-    - Wireless Mouse
-    - BCS 
-    - iphone13
+      - (?i).*laptop.*
+      - (?i).*tivi.*
+      - (?i).*iphone.*
+      - (?i).*máy giặt.*
+      - (?i).*điều hòa.*
+      - (?i).*tai nghe.*
+      - (?i).*iphone 13.*
+      - (?i).*chuột không dây.*
+      - (?i).*wireless mouse.*
+      - (?i).*macbook pro.*
+      - (?i).*macbook air.*
+      - (?i).*dell xps.*
+      - (?i).*lenovo thinkpad.*
+      - (?i).*razer blade 15.*
+      - (?i).*samsung galaxy s23.*
+      - (?i).*ipad pro.*
+      - (?i).*apple watch series 9.*
+      - (?i).*logitech mx master 3.*
+      - (?i).*ssd 1tb.*
+      - (?i).*usb 128gb.*
+      - (?i).*rtx 4090.*
+      - (?i).*router wifi 6.*
+      - (?i).*playstation 5.*
+      - (?i).*xbox series x.*
+
 - synonym: laptop
   examples: |
     - máy tính xách tay
     - notebook
-    - Macbook Air M1 
-    - Dell inspection
-    - Dell Alien
+    - Macbook Air M1
+    - Macbook Pro M2
+    - Dell XPS 13
+    - Razer Blade 14
+    - Lenovo Legion 5
+
+#  laptop:
+#    - laptop gaming
+#    - laptop văn phòng
+#    - laptop gaming
+#    - laptop văn phòng
+#    - laptop Dell
+#    - laptop Asus
+#    - laptop Lenovo
+#    - laptop giá rẻ
+#    - laptop xịn
+#    - laptop cao cấp
+
+- synonym: smartphone
+  examples: |
+    - điện thoại
+    - điện thoại thông minh
+    - Samsung Galaxy
+    - iPhone
+    - Xiaomi Redmi
+
+- synonym: headphone
+  examples: |
+    - tai nghe
+    - tai nghe không dây
+    - AirPods
+    - Sony WH-1000XM5
+    - Bose QuietComfort 45
 
 - intent: order
   examples: |
-    - Tôi muốn kiểm tra đơn hàng [Jayki](type_order)
-    - Tôi muốn kiểm tra đơn hàng [ABC123](type_order)
-    - Tôi muốn kiểm tra đơn hàng [XYZ789](type_order)
-    - Tôi muốn kiểm tra đơn hàng [123ABC](type_order)
-    - Tôi muốn kiểm tra đơn hàng [456DEF](type_order)
-    - Tôi muốn kiểm tra đơn hàng [mã bất kỳ](type_order)
-    - Tôi muốn kiểm tra đơn hàng [#123ABC](type_order)
+    - tôi muốn kiểm tra đơn hàng [Jayki](type_order)
+    - tôi muốn kiểm tra đơn hàng [ABC123](type_order)
+    - tôi muốn kiểm tra đơn hàng [XYZ789](type_order)
+    - đơn hàng của tôi [jayki])type_order)
+    - kiểm tra đơn hàng [Jayki](type_order)
     - Kiểm tra đơn hàng [ABC123](type_order)
+    - kiểm tra đơn hàng [ABC123](type_order)
     - Xem thông tin đơn hàng [XYZ789](type_order)
+    - check đơn hàng [abc](type_order)
+    - đơn hàng của tôi [987XYZ](type_order), kiểm tra giúp tôi với
+    - làm ơn kiểm tra đơn hàng số [#2023XYZ](type_order) giùm tôi
+    - mình có thể biết tình trạng đơn hàng [#ORD456](type_order) không?
+    - tôi cần tra cứu đơn hàng mã [ORDER-789](type_order)
+    - hãy giúp tôi tìm đơn hàng [ORD_123](type_order)
+    - kiểm tra hộ tôi đơn hàng số [A1B2C3](type_order)
+    - đơn hàng của tôi là [123456](type_order), khi nào giao vậy?
+    - đơn hàng mã [#2024-ABC](type_order) của tôi đang ở đâu?
+    - mình đặt đơn [XYZ-789](type_order), kiểm tra giúp mình với
+    - Tôi cần kiểm tra trạng thái đơn hàng có mã [ORD2024](type_order)
+    - check giúp mình đơn hàng [QWERTY-123](type_order)
+    - hãy tra cứu đơn hàng có mã [O123-XYZ](type_order)
+    - tra trạng thái đơn hàng [#ORD-5555](type_order)
+    - tôi cần biết đơn hàng số [2024-XXY](type_order) đã được giao chưa?
+    - Xem đơn hàng mã [ZZZ-987](type_order) đã xử lý chưa?
+    - hãy xem giúp tôi đơn hàng có mã [#ORDER_1234](type_order)
+    - cho tôi xem tình trạng của đơn hàng [XYZ_987](type_order)
+    - Đơn hàng [TEST-001](type_order) của tôi có vấn đề gì không?
+    - Kiểm tra đơn hàng [#NEW456](type_order), cảm ơn
+    - Mình có thể xem đơn hàng [ORD-9999](type_order) đang ở đâu không?
+    - Tôi cần hỗ trợ với đơn hàng [SHIPPING-123](type_order)
+    - Đơn hàng [SALE2024-ABC](type_order) của tôi đã được duyệt chưa?
+    - đơn hàng của tôi [cc](type_order)
+    - check [ccabl](type_product)
+
 - regex: type_order
   examples: |
-    - JaykiNguyen
-    - [A-Za-z0-9]
-    - [a-zA-Z0-9\s]{1,20}
+    - [A-Za-z0-9#\-_]{3,30}   # Nhận diện mã đơn hàng gồm chữ, số, ký tự #, -, _
+    - [A-Za-z0-9\s#\-_]{3,30} # Cho phép khoảng trắng
+    - #ORD[0-9]+              # Nhận diện các mã bắt đầu bằng ORD+ số
+    - #\d{3,5}[A-Za-z]{2,4}   # Nhận diện mã dạng #123ABC, #456DEF
+    - [A-Z0-9]+[-_][A-Z0-9]+  # Nhận diện ORD-123, XYZ_987
+
+- intent: ask_anything
+  examples: |
+      - hello
+      - chào
+      - hi
+      - làm việc 
+      - xin chào
+      - thời gian làm việc
+      - địa chỉ cửa hàng
+      - chính sách bảo hành
+      - sản phẩm có sẵn không
 
 - intent: greet
   examples: |
     - hey
-    - hello
-    - hi
     - hello there
     - good morning
     - good evening

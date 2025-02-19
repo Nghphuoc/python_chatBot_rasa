@@ -3,7 +3,6 @@ version: "3.1"
 intents:
   - product
   - order
-  - greet
   - goodbye
   - affirm
   - deny
@@ -11,7 +10,9 @@ intents:
   - mood_unhappy
   - bot_challenge
   - search_product
-
+  - ask_anything
+  - greet  # Intent chào hỏi nếu cần
+  - faq
 entities:
   - type_product
   - type_order
@@ -40,7 +41,6 @@ slots:
     mappings:
       - type: from_entity
         entity: type_product
-
 
   type_order:
     type: text
@@ -109,4 +109,4 @@ session_config:
 actions:
   - action_product
   - action_order
-  - search_product
+  - action_ask_anything
