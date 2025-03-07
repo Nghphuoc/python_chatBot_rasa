@@ -107,15 +107,6 @@ nlu:
       - (?i).*playstation 5.*
       - (?i).*xbox series x.*
 
-- synonym: laptop
-  examples: |
-    - máy tính xách tay
-    - notebook
-    - Macbook Air M1
-    - Macbook Pro M2
-    - Dell XPS 13
-    - Razer Blade 14
-    - Lenovo Legion 5
 
 #  laptop:
 #    - laptop gaming
@@ -129,21 +120,6 @@ nlu:
 #    - laptop xịn
 #    - laptop cao cấp
 
-- synonym: smartphone
-  examples: |
-    - điện thoại
-    - điện thoại thông minh
-    - Samsung Galaxy
-    - iPhone
-    - Xiaomi Redmi
-
-- synonym: headphone
-  examples: |
-    - tai nghe
-    - tai nghe không dây
-    - AirPods
-    - Sony WH-1000XM5
-    - Bose QuietComfort 45
 
 - intent: order
   examples: |
@@ -287,3 +263,19 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: faq
+  examples: |
+    - Tôi có thể hủy đơn hàng không?
+    - Làm thế nào để đổi trả sản phẩm?
+    - Thời gian giao hàng bao lâu?
+    - Chính sách bảo hành như thế nào?
+    - Tôi có thể thanh toán bằng ví điện tử không?
+
+- intent: search_product
+  examples: |
+    - Tôi muốn tìm điện thoại Samsung
+    - Có laptop nào dưới 15 triệu không?
+    - Tìm giúp tôi một chiếc tivi 55 inch
+    - Tôi cần mua tai nghe bluetooth
+    - Có sản phẩm nào của Apple không?

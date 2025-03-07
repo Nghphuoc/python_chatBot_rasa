@@ -122,12 +122,12 @@ stories:
 - story: Người dùng muốn hỏi về chính sách bảo hành
   steps:
       - intent: faq
-      - action: action_ask_anything
+      - action: action_faq
 
 - story: Người dùng muốn hỏi về địa chỉ cửa hàng
   steps:
       - intent: faq
-      - action: action_ask_anything
+      - action: action_faq
 
 - story: Người dùng cảm ơn
   steps:

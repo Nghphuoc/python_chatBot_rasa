@@ -110,3 +110,4 @@ actions:
   - action_product
   - action_order
   - action_ask_anything
+  - action_faq
