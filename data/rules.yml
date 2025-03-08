@@ -1,28 +1,68 @@
 version: "3.1"
 
 rules:
-- rule: Tìm kiếm sản phẩm
+- rule: Xử lý tìm kiếm sản phẩm
   steps:
     - intent: search_product
     - action: action_product
 
-- rule: Trả lời FAQ
+- rule: Trả lời các câu hỏi FAQ
   steps:
     - intent: faq
     - action: action_faq
 
-
-- rule: Say goodbye anytime the user says goodbye
+- rule: Xử lý chào hỏi
   steps:
-    - intent: goodbye
-    - action: utter_goodbye
+    - intent: greet
+    - action: utter_greet
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Xác nhận bot là AI
   steps:
     - intent: bot_challenge
     - action: utter_iamabot
 
-- rule: Trả lời câu hỏi ngoài yêu cầu
+- rule: Xử lý chào tạm biệt
   steps:
-    - intent: ask_anything
-    - action: action_ask_anything
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Xử lý khi user vui vẻ
+  steps:
+    - intent: mood_great
+    - action: utter_happy
+
+- rule: Xử lý khi user buồn
+  steps:
+    - intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+
+- rule: Xử lý fallback khi chatbot không hiểu câu hỏi
+  steps:
+    - intent: nlu_fallback
+    - action: utter_fallback
+
+- rule: Xử lý khi user nhập câu không hợp lệ
+  steps:
+    - intent: out_of_scope
+    - action: utter_default
+
+- rule: Hỗ trợ kiểm tra đơn hàng hợp lệ
+  condition:
+    - slot_was_set:
+        - type_order: true
+  steps:
+    - intent: order
+    - action: action_order
+
+- rule: Hỗ trợ kiểm tra đơn hàng không hợp lệ
+  condition:
+    - slot_was_set:
+        - type_order: null
+  steps:
+    - intent: order
+    - action: action_order
+    - action: utter_ask_order
+    - action: action_listen
+
+

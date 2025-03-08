@@ -2,144 +2,111 @@ version: "3.1"
 
 stories:
 
-- story: Kiểm tra đơn hàng không tìm thấy
-  steps:
-  - intent: order
-  - slot_was_set:
-      - type_order: null  # Không có mã đơn hàng
-  - action: utter_order_not_found
-  - action: utter_ask_order
-
-- story: Chào hỏi và phản hồi tích cực
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: Product search
-  steps:
-  - intent: product
-  - action: action_product
-
-- story: Chào hỏi và động viên người dùng
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: Chào hỏi và tạm biệt khi không giúp được
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: Tìm kiếm sản phẩm cụ thể
-  steps:
-  - intent: product
-  - slot_was_set:
-      - type_product: "iphone13"  # Ví dụ minh họa
-  - action: action_product
-
-- story: Tìm kiếm sản phẩm theo danh mục
-  steps:
-  - intent: search_product
-  - slot_was_set:
-      - type_product: "Laptop"
-  - action: action_product
-
-- story: Kiểm tra đơn hàng
-  steps:
-  - intent: order
-  - slot_was_set:
-      - type_order: "6"  # Ví dụ minh họa
-  - action: action_order
-
-- story: Chào hỏi và tìm kiếm sản phẩm
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: product
-  - slot_was_set:
-      - type_product: "Wireless Mouse"  # Ví dụ minh họa
-  - action: action_product
-
-- story: Chào hỏi và kiểm tra đơn hàng
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: order
-  - slot_was_set:
-      - type_order: "5"  # Ví dụ minh họa
-  - action: action_order
-
-- story: Tìm kiếm sản phẩm
-  steps:
-  - intent: product
-  - slot_was_set:
-      - type_product: "iphone13"
-  - action: action_product
-
-- story: Trả lời câu hỏi về chính sách bảo hành
-  steps:
-  - intent: ask_anything
-  - action: action_ask_anything
-
 - story: Người dùng chào hỏi
   steps:
     - intent: greet
     - action: utter_greet
-
-- story: Người dùng tạm biệt
-  steps:
-    - intent: goodbye
-    - action: utter_goodbye
 
 - story: Người dùng hỏi chatbot là ai
   steps:
     - intent: bot_challenge
     - action: utter_iamabot
 
+- story: Người dùng tạm biệt
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
 - story: Người dùng vui vẻ
   steps:
-      - intent: mood_great
-      - action: utter_happy
+    - intent: mood_great
+    - action: utter_happy
 
-- story: Người dùng buồn
+- story: Người dùng buồn và cần động viên
   steps:
-      - intent: mood_unhappy
-      - action: utter_cheer_up
-      - action: utter_did_that_help
+    - intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
 
-- story: Người dùng muốn hỏi về chính sách bảo hành
+- story: Người dùng buồn nhưng không cần giúp đỡ
   steps:
-      - intent: faq
-      - action: action_faq
+    - intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - intent: deny
+    - action: utter_goodbye
 
-- story: Người dùng muốn hỏi về địa chỉ cửa hàng
+- story: Tìm kiếm sản phẩm cụ thể
   steps:
-      - intent: faq
-      - action: action_faq
+    - intent: product
+    - slot_was_set:
+        - type_product: "iphone13"
+    - action: action_product
+
+- story: Tìm kiếm sản phẩm theo danh mục
+  steps:
+    - intent: search_product
+    - slot_was_set:
+        - type_product: "Laptop"
+    - action: action_product
+
+- story: Kiểm tra đơn hàng hợp lệ
+  steps:
+    - intent: order
+    - slot_was_set:
+        - type_order: "123456"
+    - action: action_order
+
+- story: Kiểm tra đơn hàng và phản hồi
+  steps:
+    - intent: order
+    - action: action_order
+    - slot_was_set:
+        - type_order: null
+    - action: utter_ask_order
+    - action: action_listen
+
+- story: Kiểm tra đơn hàng hợp lệ và phản hồi
+  steps:
+    - intent: order
+    - action: action_order
+    - slot_was_set:
+        - type_order: true
+    - action: utter_confirm_order
+    - action: action_listen
+
+
+- story: Người dùng nhập sai mã đơn hàng
+  steps:
+    - intent: order
+    - action: action_order
+    - slot_was_set:
+        - type_order: null
+    - action: utter_ask_order
+
+- story: Hỏi về chính sách bảo hành
+  steps:
+    - intent: faq
+    - action: action_faq
+
+- story: Hỏi về phương thức thanh toán
+  steps:
+    - intent: faq
+    - action: action_faq
 
 - story: Người dùng cảm ơn
   steps:
-      - intent: affirm
-      - action: utter_thankyou
+    - intent: affirm
+    - action: utter_thankyou
 
 - story: Người dùng cần hỗ trợ thêm
   steps:
-      - intent: deny
-      - action: utter_contact_support
+    - intent: deny
+    - action: utter_contact_support
 
 - story: Người dùng hỏi bất kỳ câu hỏi nào khác
   steps:
-      - intent: ask_anything
-      - action: action_ask_anything
+    - intent: ask_anything
+    - action: action_ask_anything

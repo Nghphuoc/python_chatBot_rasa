@@ -13,6 +13,7 @@ intents:
   - ask_anything
   - greet  # Intent chào hỏi nếu cần
   - faq
+  - out_of_scope
 entities:
   - type_product
   - type_order
@@ -99,8 +100,16 @@ responses:
     - text: "Rất vui được hỗ trợ bạn. Chúc bạn mua sắm vui vẻ!"
 
   utter_contact_support:
-    - text: "Nếu cần hỗ trợ thêm, bạn có thể liên hệ qua hotline: 1900 1234."
-    - text: "Đội ngũ hỗ trợ của chúng tôi luôn sẵn sàng giúp bạn qua email: support@domain.com."
+    - text: "Nếu cần hỗ trợ thêm, bạn có thể liên hệ qua hotline: 0858179329."
+    - text: "Đội ngũ hỗ trợ của chúng tôi luôn sẵn sàng giúp bạn qua email: huuphuocit04@gmail.com."
+  utter_fallback:
+    - text: "Xin lỗi, tôi chưa hiểu câu hỏi của bạn. Bạn có thể diễn đạt lại không?"
+
+  utter_default :
+    - text: "Tôi chưa hiểu yêu cầu của bạn. Hãy thử hỏi về sản phẩm hoặc đơn hàng nhé!"
+
+  utter_confirm_order:
+    - text: "Đơn hàng của bạn đã được xác nhận! Bạn cần hỗ trợ gì thêm không?"
 
 session_config:
   session_expiration_time: 60

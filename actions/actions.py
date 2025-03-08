@@ -126,3 +126,27 @@ class ActionAskAnything(Action):
         # Trường hợp không có câu hỏi mẫu, hỏi lại người dùng
         dispatcher.utter_message("Xin lỗi, tôi không hiểu câu hỏi của bạn. Bạn có thể hỏi lại bằng các câu mẫu như (tìm iPad Pro), (tìm iphone 13), hoặc các câu hỏi về thời gian làm việc, địa chỉ cửa hàng, bảo hành,...")
         return []
+
+
+class ActionFaq(Action):
+    def name(self) -> Text:
+        return "action_faq"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        faq_responses = {
+            "Tôi có thể hủy đơn hàng không?": "Bạn có thể hủy đơn hàng trước khi đơn hàng được xác nhận giao hàng. Vui lòng liên hệ bộ phận chăm sóc khách hàng để biết thêm chi tiết.",
+            "Làm thế nào để đổi trả sản phẩm?": "Bạn có thể đổi trả sản phẩm trong vòng  1 tháng nếu sản phẩm bị lỗi hoặc không đúng với đơn đặt hàng. Vui lòng tham khảo chính sách đổi trả trên website của chúng tôi.",
+            "Thời gian giao hàng bao lâu?": "Thời gian giao hàng thường từ 3-5 ngày làm việc, tùy thuộc vào địa điểm nhận hàng của bạn.",
+            "Chính sách bảo hành như thế nào?": "Chính sách bảo hành khác nhau tùy theo sản phẩm. Vui lòng kiểm tra chi tiết bảo hành trên trang sản phẩm hoặc liên hệ bộ phận hỗ trợ.",
+            "Tôi có thể thanh toán bằng ví điện tử không?": "Có, chúng tôi hỗ trợ thanh toán bằng ví điện tử như ZaloPay, và VNPay."
+        }
+
+        user_message = tracker.latest_message.get("text")  # Lấy tin nhắn gần nhất từ user
+        response = faq_responses.get(user_message, "Xin lỗi, tôi chưa có thông tin về câu hỏi này. Vui lòng liên hệ hỗ trợ!")
+
+        dispatcher.utter_message(text=response)
+
+        return []

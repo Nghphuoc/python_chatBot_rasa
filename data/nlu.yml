@@ -279,3 +279,16 @@ nlu:
     - Tìm giúp tôi một chiếc tivi 55 inch
     - Tôi cần mua tai nghe bluetooth
     - Có sản phẩm nào của Apple không?
+
+intents:
+  - out_of_scope
+
+examples:
+  - intent: out_of_scope
+    examples: |
+      - Hôm nay thời tiết thế nào?
+      - Bạn có thể đặt vé máy bay cho tôi không?
+      - Tôi muốn biết điểm số bóng đá mới nhất.
+      - Ai là tổng thống Mỹ hiện tại?
+      - Bạn có thể kể chuyện cười không?
+      - Tôi muốn đặt bàn tại nhà hàng gần đây.
