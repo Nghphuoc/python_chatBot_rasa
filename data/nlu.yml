@@ -3,10 +3,22 @@ nlu:
 - intent: product
   examples: |
     - tôi cần mua [laptop](type_product)
+    - đề xuất sản phẩm [laptop](type_product)
+    - đề xuất [laptop](type_product)
+    - đề xuất điện thoại [samsung](type_product)
     - tôi muốn đặt hàng cho [tivi](type_product)
+    - sản phẩm [tivi](type_product)
+    - gợi ý [tivi](type_product)
+    - tham khảo sản phẩm [samsung](type_product)
+    - tham khảo [samsung](type_product)
+    - find [samsung](type_product)
+    - đề xuất các loại [samsung](type_product)
+    - cần xem [ipad](type_product)
     - đặt hàng cho [iphone](type_product)
     - cần Mua [máy tính](type_product)
     - tìm [chuột](type_product)
+    - tìm điện thoại [chuột](type_product)
+    - cần mua điện thoại [xiaomi](type_product)
     - tôi muốn mua [bàn phím cơ](type_product)
     - có bán [smartwatch](type_product) không?
     - shop có bán [smartwatch](type_product) không?
@@ -36,6 +48,8 @@ nlu:
     - có [pin sạc dự phòng](type_product) không?
     - tôi đang tìm [ổ cứng di động](type_product)
     - bán [tai nghe không dây](type_product) không?
+    - gợi ý sản phẩm [Noen] (type_product)
+    - sản phẩm [Noen] (type_product)
     - tôi cần một [màn hình máy tính](type_product)
     - tôi muốn mua [laptop gaming](type_product)
     - tôi cần một [máy in](type_product)
@@ -62,6 +76,9 @@ nlu:
     - shop có bán [Google Nest Hub](type_product) không?
     - tôi muốn đặt [Amazon Echo](type_product)
     - có [SSD NVMe 2TB](type_product) không?
+    - Có loại [tai nghe Sony WH-1000XM5](type_product) không?
+    - Còn [tablet](type_product)
+    - tôi đang cần [tablet](type_product)
     - tôi cần mua một [máy rửa bát thông minh](type_product)
     - tôi đang tìm [ổ cắm điện thông minh](type_product)
     - tôi có thể mua [tai nghe Sony WH-1000XM5](type_product) không?

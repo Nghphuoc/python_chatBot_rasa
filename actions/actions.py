@@ -113,7 +113,10 @@ class ActionAskAnything(Action):
             "hi": "Xin chào tôi là Chat Bot của TechShop tạo ra để hỗ trợ bạn!!",
             "thời gian làm việc": "Chúng tôi làm việc từ 9 giờ sáng đến 6 giờ chiều.",
             "địa chỉ cửa hàng": "Cửa hàng của chúng tôi nằm ở 123 Đường ABC, TP.HCM.",
+            "địa chỉ": "Cửa hàng của chúng tôi nằm ở 123 Đường ABC, TP.HCM.",
             "chính sách bảo hành": "Chúng tôi cung cấp bảo hành 1 năm cho tất cả các sản phẩm. Và một đổi 1 trong vòng 1 tháng.",
+            "chính sách bảo hành như thế nào": "Chúng tôi cung cấp bảo hành 1 năm cho tất cả các sản phẩm. Và một đổi 1 trong vòng 1 tháng.",
+            "bảo hành như thế nào": "Chúng tôi cung cấp bảo hành 1 năm cho tất cả các sản phẩm. Và một đổi 1 trong vòng 1 tháng.",
             "sản phẩm có sẵn không": "Xin lỗi, tôi sẽ kiểm tra xem sản phẩm có sẵn hay không và thông báo lại cho bạn!"
         }
 
