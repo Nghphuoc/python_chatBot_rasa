@@ -2,100 +2,318 @@ version: "3.1"
 nlu:
 - intent: product
   examples: |
+    # Người dùng cần mua sản phẩm
     - tôi cần mua [laptop](type_product)
-    - đề xuất sản phẩm [laptop](type_product)
-    - đề xuất [laptop](type_product)
-    - đề xuất điện thoại [samsung](type_product)
-    - tôi muốn đặt hàng cho [tivi](type_product)
-    - sản phẩm [tivi](type_product)
-    - gợi ý [tivi](type_product)
-    - tham khảo sản phẩm [samsung](type_product)
-    - tham khảo [samsung](type_product)
-    - find [samsung](type_product)
-    - đề xuất các loại [samsung](type_product)
-    - cần xem [ipad](type_product)
-    - đặt hàng cho [iphone](type_product)
-    - cần Mua [máy tính](type_product)
-    - tìm [chuột](type_product)
-    - tìm điện thoại [chuột](type_product)
-    - cần mua điện thoại [xiaomi](type_product)
     - tôi muốn mua [bàn phím cơ](type_product)
-    - có bán [smartwatch](type_product) không?
-    - shop có bán [smartwatch](type_product) không?
     - tôi cần một [loa bluetooth](type_product)
-    - tôi có thể mua [camera an ninh](type_product) ở đây không?
-    - đặt trước [PS5](type_product)
-    - tôi muốn đặt một [tablet](type_product)
-    - tôi có thể mua [bộ phát WiFi](type_product) không?
-    - có [pin sạc dự phòng](type_product) không?
-    - tôi đang tìm [ổ cứng di động](type_product)
-    - bán [tai nghe không dây](type_product) không?
-    - tôi cần một [màn hình máy tính](type_product)
-    - tôi muốn mua [laptop gaming](type_product)
-    - tôi cần một [máy in](type_product)
-    - tôi cần mua [laptop](type_product)
-    - tôi muốn đặt hàng cho [tivi](type_product)
-    - đặt hàng cho [iphone](type_product)
-    - cần mua [máy tính](type_product)
-    - tìm [chuột](type_product)
-    - tôi muốn mua [bàn phím cơ](type_product)
-    - có bán [smartwatch](type_product) không?
-    - tôi cần một [loa bluetooth](type_product)
-    - tôi có thể mua [camera an ninh](type_product) ở đây không?
-    - đặt trước [PS5](type_product)
-    - tôi muốn đặt một [tablet](type_product)
-    - tôi có thể mua [bộ phát WiFi](type_product) không?
-    - có [pin sạc dự phòng](type_product) không?
-    - tôi đang tìm [ổ cứng di động](type_product)
-    - bán [tai nghe không dây](type_product) không?
-    - gợi ý sản phẩm [Noen] (type_product)
-    - sản phẩm [Noen] (type_product)
-    - tôi cần một [màn hình máy tính](type_product)
-    - tôi muốn mua [laptop gaming](type_product)
-    - tôi cần một [máy in](type_product)
-    - có bán [ổ cứng SSD](type_product) không?
-    - tôi muốn mua [tản nhiệt nước](type_product)
-    - tôi đang tìm [card đồ họa RTX 3060](type_product)
-    - shop có [bàn phím cơ Razer](type_product) không?
-    - có bán [laptop Dell XPS](type_product) không?
-    - tôi cần mua một [MacBook Pro M2](type_product)
-    - tôi đang tìm [c](type_product)
-    - cửa hàng có [Sony PlayStation 5](type_product) không?
-    - tôi muốn đặt trước [Xbox Series X](type_product)
-    - tôi cần một [AirPods Pro 2](type_product)
-    - có [Samsung Galaxy Watch 6](type_product) không?
     - tôi đang tìm mua [robot hút bụi](type_product)
-    - tôi muốn mua [máy chiếu mini](type_product)
-    - shop có [đồng hồ Garmin](type_product) không?
-    - có bán [màn hình cong 4K](type_product) không?
-    - tôi đang tìm [balo laptop chống sốc](type_product)
-    - shop có bán [chuột Logitech G502](type_product) không?
-    - tôi muốn mua [micro thu âm](type_product)
-    - có bán [gaming chair](type_product) không?
-    - tôi muốn tìm [đèn LED thông minh](type_product)
-    - shop có bán [Google Nest Hub](type_product) không?
-    - tôi muốn đặt [Amazon Echo](type_product)
-    - có [SSD NVMe 2TB](type_product) không?
-    - Có loại [tai nghe Sony WH-1000XM5](type_product) không?
-    - Còn [tablet](type_product)
-    - tôi đang cần [tablet](type_product)
-    - tôi cần mua một [máy rửa bát thông minh](type_product)
-    - tôi đang tìm [ổ cắm điện thông minh](type_product)
-    - tôi có thể mua [tai nghe Sony WH-1000XM5](type_product) không?
-    - shop có [bút cảm ứng Apple Pencil](type_product) không?
-    - tôi muốn mua một [bộ nhớ RAM DDR5](type_product)
-    - có bán [bàn phím cơ Keychron K8](type_product) không?
-    - tôi muốn tìm [màn hình gaming 240Hz](type_product)
-    - shop có [máy chơi game Nintendo Switch](type_product) không?
-    - tôi đang tìm mua [loại kính thực tế ảo Oculus Quest](type_product)
-    - tôi muốn mua [bộ sạc nhanh 100W](type_product)
-    - có [máy lọc không khí Xiaomi](type_product) không?
-    - muốn tìm [đèn bàn LED cảm ứng](type_product)
-    - tôi đang tìm một [máy ảnh Canon EOS R6](type_product)
-    - shop có bán [balo chống nước cho laptop](type_product) không?
-    - tôi cần mua một [bộ phát sóng 5G WiFi](type_product)
-    - có [ổ cứng HDD 10TB](type_product) không?
+    - tôi cần mua một [máy in](type_product)
     - tôi muốn đặt hàng một [iMac M3](type_product)
+    - tôi đang cần mua [tablet](type_product)
+    - tôi muốn đặt một [tablet](type_product)
+    - tôi đang tìm [ổ cứng di động](type_product)
+    - tôi muốn đặt [Amazon Echo](type_product)
+
+    # Gợi ý, đề xuất
+    - bạn có thể gợi ý cho tôi [smartwatch](type_product) nào tốt không?
+    - đề xuất sản phẩm [iphone](type_product)
+    - có loại [tivi](type_product) nào bền và tiết kiệm điện không?
+    - tôi cần gợi ý [bàn phím cơ](type_product) dùng cho lập trình
+    - gợi ý vài mẫu [laptop gaming](type_product) mạnh
+    - tôi cần mua [chuột](type_product) dùng cho văn phòng
+    - có gợi ý nào cho [tai nghe không dây](type_product) chất lượng không?
+    - đề xuất [iphone 15](type_product)
+    - đề xuất các loại [samsung galaxy](type_product)
+    - đề xuất điện thoại [xiaomi](type_product)
+    - có loại [girlfriend](type_product) nào khồng
+    - bạn có thể đề xuất [smartwatch](type_product) nào tốt không?
+
+    # Tìm kiếm thông thường
+    - tôi đang tìm [chuột Logitech G502](type_product)
+    - tìm [tai nghe Sony WH-1000XM5](type_product)
+    - tôi muốn tìm [màn hình cong 4K](type_product)
+    - tìm giúp tôi [camera an ninh](type_product)
+    - có bán [gaming chair](type_product) không?
+
+    # Kiểm tra còn hàng không
+    - còn [tablet](type_product) không?
+    - shop còn [máy lọc không khí Xiaomi](type_product) không?
+    - có [SSD NVMe 2TB](type_product) không?
+    - có [bộ sạc nhanh 100W](type_product) không?
+    - shop có bán [balo chống nước cho laptop](type_product) không?
+    - shop có bán điện thoại [xiaomi](type_product) 
+
+    # Đặt hàng
+    - tôi muốn đặt hàng cho [tivi](type_product)
+    - tôi muốn đặt trước [Xbox Series X](type_product)
+    - đặt hàng giúp tôi [MacBook Pro M2](type_product)
+    - tôi muốn mua và giao [bộ nhớ RAM DDR5](type_product)
+    - tôi cần đặt trước điện thoại [xiaomi Redmi](type_product)
+    
+    # Tiếng Anh (đơn giản nhưng hữu dụng)
+    - do you have [laptop](type_product)?
+    - can I buy [smartwatch](type_product) here?
+    - is [iMac M3](type_product) available?
+    - find me a [gaming chair](type_product)
+    - I’m looking for [camera an ninh](type_product)
+    
+
+    # Ngữ cảnh cụ thể hơn
+    - có loại [laptop](type_product) nào phù hợp để học online không?
+    - tôi muốn mua [máy chiếu mini](type_product) để trình chiếu trong lớp học
+    - tôi đang tìm [micro thu âm](type_product) cho phòng thu
+    - tôi cần một [tản nhiệt nước](type_product) cho PC
+    - có bán [card đồ họa RTX 3060](type_product) không?
+
+    # Tên sản phẩm thương hiệu cụ thể
+    - shop có bán [Sony PlayStation 5](type_product) không?
+    - có [Samsung Galaxy Watch 6](type_product) không?
+    - tôi cần một [AirPods Pro 2](type_product)
+    - shop có [bút cảm ứng Apple Pencil](type_product) không?
+    - tôi đang tìm [kính thực tế ảo Oculus Quest](type_product)
+
+    # Các sản phẩm thông minh, công nghệ
+    - có [đèn LED thông minh](type_product) không?
+    - tôi cần mua [máy rửa bát thông minh](type_product)
+    - có bán [ổ cắm điện thông minh](type_product) không?
+    - tôi đang tìm [Google Nest Hub](type_product)
+
+    - bạn có thể gợi ý cho tôi một số [laptop văn phòng](type_product) không?
+    - gợi ý giúp tôi vài mẫu [điện thoại chơi game](type_product) giá tốt
+    - có sản phẩm nào thuộc dòng [tai nghe chống ồn](type_product) bạn đề xuất không?
+    - tư vấn giúp mình loại [tivi thông minh](type_product) tốt nhất hiện nay
+    - có thể giới thiệu một vài mẫu [tablet học online](type_product) không?
+    - có [router WiFi mạnh](type_product) nào phù hợp cho nhà 3 tầng không?
+    - hãy gợi ý giúp tôi một chiếc [camera an ninh trong nhà](type_product)
+    - có mẫu [bàn phím cơ gõ êm](type_product) nào bạn thấy ổn không?
+    - bạn có đề xuất nào cho [máy lọc không khí mini](type_product)?
+    - có thể gợi ý loại [tai nghe không dây giá rẻ](type_product) được không?
+    
+    - tôi muốn đặt hàng một chiếc [laptop Dell XPS](type_product)
+    - tôi muốn mua [tai nghe Sony WH-1000XM5](type_product)
+    - hãy giúp tôi đặt một [máy in màu Canon](type_product)
+    - tôi cần mua ngay một [bộ phát WiFi 5G](type_product)
+    - tôi muốn mua [bàn phím cơ Keychron K8](type_product)
+    - làm ơn đặt trước cho tôi một [PS5](type_product)
+    - có thể đặt trước [iMac M3](type_product) được không?
+    - mình muốn mua một [Google Nest Hub](type_product)
+    - cho tôi đặt một [robot hút bụi Xiaomi](type_product)
+    - tôi muốn mua một [tablet có hỗ trợ bút cảm ứng](type_product)
+
+    - tôi đang tìm mua [máy chiếu mini](type_product)
+    - tìm giúp tôi một chiếc [màn hình 24 inch Full HD](type_product)
+    - có [tai nghe không dây](type_product) nào phù hợp với iPhone không?
+    - tôi muốn tìm một [micro thu âm tốt](type_product)
+    - đang tìm [chuột không dây Logitech](type_product) giá tốt
+    - có mẫu [tablet mỏng nhẹ](type_product) nào không?
+    - mình cần tìm [bàn phím Bluetooth cho MacBook](type_product)
+    - có mẫu [SSD 2TB NVMe](type_product) nào đang khuyến mãi không?
+    - tôi đang tìm loại [máy ảnh chụp chuyên nghiệp](type_product)
+    - cần tìm một [loa Bluetooth chống nước](type_product)
+
+    - shop có bán [tai nghe AirPods Pro 2](type_product) không?
+    - có còn [máy rửa bát mini](type_product) không?
+    - cửa hàng còn hàng [tablet Galaxy Tab S9](type_product) không?
+    - còn bán [bàn phím cơ Razer](type_product) không bạn?
+    - còn [chuột Logitech G502](type_product) không?
+    - có sẵn [màn hình gaming 240Hz](type_product) không?
+    - còn hàng [máy ảnh Canon EOS R6](type_product) không?
+    - có bán [bộ nhớ RAM DDR5 32GB](type_product) không?
+    - bạn còn [SSD 1TB cho laptop](type_product) không?
+    - cửa hàng có bán [đèn LED thông minh điều khiển giọng nói](type_product) không?
+    
+    # Cần mua, muốn mua
+    - tôi muốn mua một cái [laptop](type_product)
+    - tôi cần đặt mua [tivi](type_product) càng sớm càng tốt
+    - tôi đang muốn mua [máy in laser](type_product)
+    - có bán [robot hút bụi](type_product) không?
+    - tôi cần mua gấp một cái [bộ sạc nhanh](type_product)
+    - tôi muốn sở hữu [PlayStation 5](type_product)
+    - tôi cần tìm mua [bàn phím cơ](type_product)
+    - mình cần mua [máy rửa bát](type_product) cho gia đình
+    - tôi cần tìm [tai nghe](type_product) 
+    
+    # Gợi ý, tư vấn, đề xuất
+    - bạn có thể gợi ý cho mình một số mẫu [laptop gaming](type_product) không?
+    - gợi ý giúp mình vài loại [tai nghe bluetooth](type_product) pin lâu
+    - mình đang phân vân giữa các loại [tablet](type_product), bạn tư vấn giúp nhé
+    - có gợi ý nào cho [màn hình máy tính](type_product) phù hợp chơi game không?
+    - cần bạn tư vấn mua [loa bluetooth](type_product) loại nào nghe nhạc hay
+    - có mẫu [bàn phím cơ](type_product) nào tốt giá rẻ không?
+    - bạn gợi ý giúp tôi một [máy ảnh](type_product) chụp chân dung đẹp
+    - có thể gợi ý cho mình một mẫu [router WiFi](type_product) phù hợp không?
+
+    # Tìm kiếm thông thường
+    - tìm giúp tôi một cái [chuột không dây Logitech](type_product)
+    - có [camera an ninh ngoài trời](type_product) nào tốt không?
+    - mình đang tìm một [máy ảnh](type_product) nhỏ gọn để du lịch
+    - tìm mua [tai nghe Sony WH-1000XM5](type_product)
+    - mình muốn tìm [bàn phím Bluetooth](type_product) dùng cho iPad
+    - tìm [tablet màn hình lớn](type_product)
+    - tìm [ổ cứng di động 2TB](type_product)
+
+    # Xác nhận còn hàng
+    - còn hàng [iMac M3](type_product) không bạn?
+    - bên bạn còn [bộ nhớ RAM DDR5](type_product) không?
+    - có sẵn [tablet Galaxy Tab S9](type_product) không?
+    - bên shop còn [Google Nest Hub](type_product) không nhỉ?
+    - shop có còn bán [PS5](type_product) không?
+    - cửa hàng còn [tai nghe chống ồn Sony](type_product) không?
+    - còn [loa bluetooth JBL](type_product) không?
+
+    # Đặt trước, đặt hàng
+    - tôi muốn đặt trước [Nintendo Switch](type_product)
+    - giúp tôi đặt mua một cái [bộ phát WiFi](type_product)
+    - mình muốn đặt hàng [AirPods Pro 2](type_product)
+    - đặt trước [laptop Dell XPS](type_product) cho mình với nhé
+    - tôi cần đặt mua [màn hình cong 4K](type_product)
+    - đặt hàng giúp mình [máy in Canon màu](type_product)
+    - tôi muốn đặt hàng ngay [robot hút bụi Xiaomi](type_product)
+    - tìm những sản phẩm của [samsung](type_product)
+
+    # Sản phẩm công nghệ, thông minh
+    - tôi đang cần một [đèn LED thông minh](type_product)
+    - có [máy lọc không khí mini](type_product) nào cho phòng nhỏ không?
+    - cần mua một [robot hút bụi Xiaomi](type_product)
+    - mình đang tìm [ổ cắm điện điều khiển bằng giọng nói](type_product)
+    - shop có bán [máy rửa bát thông minh](type_product) không?
+    - cần mua [Google Nest Hub](type_product) bản mới
+    - gợi ý sản phẩm của hãng [apple](type_product)
+    - đề xuất những sản phẩm của hãng [xiaomi](type_product)
+
+    # Câu rút gọn, tự nhiên
+    - cần [router WiFi](type_product) tốt
+    - tìm [SSD](type_product) 1TB
+    - mua [balo laptop](type_product)
+    - có [camera trong nhà](type_product) không?
+    - cần [tai nghe](type_product) xịn
+    - có bán [loa bluetooth](type_product) giá rẻ không?
+    - muốn mua [bàn phím cơ](type_product) chống ồn
+
+    # Tiếng Anh
+    - do you sell [MacBook Pro M2](type_product)?
+    - can I order a [gaming monitor](type_product)?
+    - is [tablet](type_product) still available?
+    - I'm looking for a [wireless headset](type_product)
+    - I want to buy a [mechanical keyboard](type_product)
+
+    # Nhu cầu sử dụng
+    - tôi cần một [tablet](type_product) cho con học online
+    - có [máy in](type_product) nào phù hợp cho văn phòng nhỏ không?
+    - gợi ý giúp mình [laptop](type_product) để học lập trình
+    - mình cần [camera an ninh](type_product) cho nhà riêng
+    - có loại [loa bluetooth](type_product) nào phù hợp mang đi du lịch không?
+    - tìm giúp mình [tai nghe](type_product) không dây đeo thoải mái
+
+    # Tên sản phẩm cụ thể
+    - có bán [Sony WH-1000XM5](type_product) không?
+    - shop có [Samsung Galaxy Watch 6](type_product) không?
+    - tôi cần [AirPods Pro 2](type_product)
+    - tôi đang tìm [Oculus Quest 3](type_product)
+    - có [MacBook Air M2](type_product) không?
+    - các loại sản phẩm của [samsung](type_product)
+    - sản phẩm [xiaomi](type_product)
+    - tôi cần tìm [pin dự phòng](type_product)
+    
+
+
+  # Tai nghe sẽ là từ chuẩn (canonical name)
+- synonym: tai nghe
+  examples: |
+    - tai nghe chống ồn
+    - tai nghe bluetooth
+    - bluetooth tai nghe
+    - âm thanh
+    - tai nghe không dây
+
+- synonym: iphone
+  examples: |
+    - điện thoại iphone
+    - điện thoại thông minh
+    - smartphone
+    - điện thoại xịn
+
+- synonym: pin
+  examples: |
+      - pin
+      - sạc dự phòng
+      - sạc di động
+      - sạc tiện lợi
+      - pin dự phòng 
+
+- synonym:  iPad
+  examples: |
+      - máy tính bảng
+      - iPad
+      - điện thoại lớn
+      - Apple ipad
+      - ipad pro
+      
+
+- synonym: Máy cạo râu
+  examples: |
+      - đồ cạo râu
+      - cạo râu
+      - râu
+      - cạo
+      - cắt râu
+      - lông
+
+- synonym: Samsung galaxy
+  examples: |
+      - điện thoại samsung
+      - samsung
+      - hãng samsung
+
+- synonym: Màn hình
+  examples: |
+      - màn hình MSI
+      - tivi
+      - Tivi 
+      - television
+
+- synonym: PS5 Slim
+  examples: |
+      - máy chơi game
+      - đồ chơi game
+      - dụng cụ chơi game
+      - game
+- synonym: Xiaomi Redmi
+  examples: |
+      - điện thoại xiaomi
+      - xiaomi
+      - hãng xiaomi 
+      - redmi
+      - điện thoại
+- synonym: Mac
+  examples: |
+      - macbook pro m4
+      - m4
+      - M4
+      - apple mac 
+      - macbook
+
+- synonym: Cáp sạc
+  examples: |
+      - dây sạc 
+      - cáp sạc 
+      - Cáp nguồn
+      - Dây cáp sạc
+      - Dây nguồn
+      - Dây kết nối sạc
+
+- synonym: Mainboard
+  examples: |
+      - bo mạch
+      - bo mạch chủ
+      - mạch chủ pc
+      - main chính 
+
+- synonym: Laptop ASUS TUF Gaming
+  examples: |
+      - laptop gaming
+      - laptop chơi game
+      - máy tính chơi game 
 
 - regex: type_product
   examples: |
@@ -123,20 +341,56 @@ nlu:
       - (?i).*router wifi 6.*
       - (?i).*playstation 5.*
       - (?i).*xbox series x.*
+      - (?i).*sạc nhanh.*
 
-
-#  laptop:
-#    - laptop gaming
-#    - laptop văn phòng
-#    - laptop gaming
-#    - laptop văn phòng
-#    - laptop Dell
-#    - laptop Asus
-#    - laptop Lenovo
-#    - laptop giá rẻ
-#    - laptop xịn
-#    - laptop cao cấp
-
+#
+#  tai nghe:
+#    - tai nghe chống ồn
+#    - tai nghe bluetooth
+#    - bluetooth tai nghe
+#    - âm thanh
+#
+#  iphone:
+#    - điện thoại iphone
+#    - điện thoại thông minh
+#    - smartphone
+#    - điện thoại xịn
+#
+#  pin dự phòng:
+#    - pin
+#    - sạc dự phòng
+#    - sạc di động
+#    - sácj tiện lợi
+#
+#  Apple iPad:
+#    - máy tính bảng
+#    - iPad
+#    - diện thoại lớn
+#
+#  Máy cạo râu:
+#    - đồ cạo râu
+#    - cạo râu
+#    - râu
+#    - cạo
+#    - cắt râu
+#    - lông
+#
+#  Samsung galaxy:
+#    - điện thoại samsung
+#    - samsung
+#    - hãng samsung
+#
+#  Màn hình:
+#    - màn hình MSI
+#    - tivi
+#    - televison
+#
+#  PS5 Slim:
+#    - máy chơi game
+#    - dồ chơi game
+#    - dụng cụ chơi game
+#    - game
+#
 
 - intent: order
   examples: |
@@ -173,6 +427,7 @@ nlu:
     - Đơn hàng [SALE2024-ABC](type_order) của tôi đã được duyệt chưa?
     - đơn hàng của tôi [cc](type_order)
     - check [ccabl](type_product)
+    - order của tôi [cc](type_order)
 
 - regex: type_order
   examples: |

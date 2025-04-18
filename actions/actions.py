@@ -7,6 +7,28 @@ import json
 logger = logging.getLogger(__name__)
 
 
+import mysql.connector
+from mysql.connector import Error
+
+def query_mysql(query: str, params: tuple = ()) -> list:
+    try:
+        connection = mysql.connector.connect(
+            host='localhost',
+            database='Jayki',
+            user='Jayki',
+            password='Jayki'
+        )
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute(query, params)
+        result = cursor.fetchall()
+        cursor.close()
+        connection.close()
+        return result
+    except Error as e:
+        print(f"MySQL error: {e}")
+        return []
+
+
 class ActionProduct(Action):
     def name(self) -> Text:
         return "action_product"
@@ -59,6 +81,79 @@ class ActionProduct(Action):
 
         return []
 
+
+#
+# class ActionProduct(Action):
+#     def name(self) -> Text:
+#         return "action_product"
+#
+#     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#         metadata = tracker.latest_message.get("metadata", {})
+#         userId = metadata.get("userId")
+#         intent = tracker.latest_message["intent"].get("name")
+#         product = next(tracker.get_latest_entity_values("type_product"), None)
+#         user_id = userId # Giả sử có slot user_id để xác định giỏ hàng
+#         cart_api_url = f"http://localhost:8080/api/chatbot/{user_id}" if user_id else None
+#
+#         logger.info(f"Intent: {intent}, Product: {product}, User ID: {user_id}")
+#
+#         if not product:
+#             dispatcher.utter_message("Tôi không tìm thấy sản phẩm nào trong yêu cầu của bạn. Bạn có muốn tìm theo danh mục không?")
+#             return []
+#
+#         headers = {"Content-Type": "application/json"}
+#
+#         # 1️⃣ **Gọi API giỏ hàng với productName**
+#         if cart_api_url:
+#             try:
+#                 cart_api_url_with_param = f"{cart_api_url}/products?productName={product}"  # Truyền product vào query params
+#                 cart_response = requests.get(cart_api_url_with_param, headers=headers)
+#
+#                 if cart_response.status_code == 200:
+#                     cart_data = cart_response.json()
+#
+#                     if cart_data:  # Nếu có sản phẩm trong giỏ hàng
+#                         product_list = "\n".join([f"- {p['productName']} (Số lượng: {p['quantity']})" for p in cart_data])
+#                         dispatcher.utter_message(f"Bạn có sản phẩm '{product}' trong giỏ hàng:\n{product_list}")
+#                         return []
+#                     else:
+#                         dispatcher.utter_message(f"Sản phẩm '{product}' không có trong giỏ hàng. Đang tìm kiếm sản phẩm...")
+#             except Exception as e:
+#                 logger.error(f"Lỗi khi gọi API giỏ hàng: {e}")
+#
+#         # 2️⃣ **Nếu giỏ hàng rỗng hoặc không có sản phẩm, gọi API tìm sản phẩm**
+#         api_url = "http://localhost:8080/api/product/search"
+#         payload = {"intent": intent, "product": product}
+#
+#         try:
+#             response = requests.post(api_url, json=payload, headers=headers)
+#             logger.info(f"Response status: {response.status_code}, Content: {response.content}")
+#
+#             if response.status_code == 200:
+#                 backend_response = response.json()
+#
+#                 if not backend_response:  # Nếu không tìm thấy sản phẩm, lấy danh sách gợi ý
+#                     dispatcher.utter_message(f"Không tìm thấy '{product}'. Bạn có muốn xem sản phẩm phổ biến không?")
+#
+#                     # 3️⃣ **Gọi API lấy danh sách sản phẩm phổ biến**
+#                     popular_products_url = "http://localhost:8080/api/product/popular"
+#                     popular_response = requests.get(popular_products_url, headers=headers)
+#
+#                     if popular_response.status_code == 200:
+#                         popular_products = popular_response.json()
+#                         product_list = "\n".join([f"- {p['name']}" for p in popular_products])
+#                         dispatcher.utter_message(f"Đây là những sản phẩm phổ biến:\n{product_list}")
+#                     else:
+#                         dispatcher.utter_message("Hiện tại không có sản phẩm phổ biến nào để gợi ý.")
+#                 else:
+#                     dispatcher.utter_message(text=json.dumps(backend_response, ensure_ascii=False))
+#             else:
+#                 dispatcher.utter_message(text="Đã xảy ra lỗi khi gửi yêu cầu tới hệ thống.")
+#         except Exception as e:
+#             logger.error(f"Lỗi khi gọi API tìm sản phẩm: {e}")
+#             dispatcher.utter_message(text=f"Xin lỗi! Sản phẩm '{product}' không tồn tại trong shop!")
+#
+#         return []
 
 class ActionOrder(Action):
     def name(self) -> Text:

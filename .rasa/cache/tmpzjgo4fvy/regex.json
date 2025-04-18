@@ -1,0 +1,122 @@
+[
+  {
+    "name": "type_order",
+    "pattern": "#ORD[0-9]+              # Nhận diện các mã bắt đầu bằng ORD+ số"
+  },
+  {
+    "name": "type_order",
+    "pattern": "#\\d{3,5}[A-Za-z]{2,4}   # Nhận diện mã dạng #123ABC, #456DEF"
+  },
+  {
+    "name": "type_order",
+    "pattern": "[A-Z0-9]+[-_][A-Z0-9]+  # Nhận diện ORD-123, XYZ_987"
+  },
+  {
+    "name": "type_order",
+    "pattern": "[A-Za-z0-9#\\-_]{3,30}   # Nhận diện mã đơn hàng gồm chữ, số, ký tự #, -, _"
+  },
+  {
+    "name": "type_order",
+    "pattern": "[A-Za-z0-9\\s#\\-_]{3,30} # Cho phép khoảng trắng"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*apple watch series 9.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*chuột không dây.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*dell xps.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*ipad pro.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*iphone 13.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*iphone.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*laptop.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*lenovo thinkpad.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*logitech mx master 3.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*macbook air.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*macbook pro.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*máy giặt.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*playstation 5.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*razer blade 15.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*router wifi 6.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*rtx 4090.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*samsung galaxy s23.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*ssd 1tb.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*sạc nhanh.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*tai nghe.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*tivi.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*usb 128gb.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*wireless mouse.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*xbox series x.*"
+  },
+  {
+    "name": "type_product",
+    "pattern": "(?i).*điều hòa.*"
+  }
+]

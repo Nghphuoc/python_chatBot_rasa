@@ -19,7 +19,8 @@ pipeline:
   - name: "EntitySynonymMapper"  # Ánh xạ các thực thể đồng nghĩa
   - name: "FallbackClassifier"  # Phân loại các câu không có intent rõ ràng
     threshold: 0.3  # Cấu hình ngưỡng để khi confidence thấp sẽ chuyển sang fallback
-#  - name: "RegexEntityExtractor"  # Vẫn giữ RegexEntityExtractor để trích xuất thực thể từ regex
+  - name: "RegexEntityExtractor"  # Vẫn giữ RegexEntityExtractor để trích xuất thực thể từ regex
+    use_lookup_tables: True
 
 policies:
 - name: MemoizationPolicy
